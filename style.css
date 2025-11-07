@@ -1,0 +1,504 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  color: #1e1e2a;
+  background: #fff;
+  line-height: 1.6;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+/* VARIABLES */
+:root {
+  --purple-dark: #3E2F86;
+  --purple-main: #4B3B8F;
+  --purple-light: #6A5AE0;
+  --pink-light: #FBE8F4;
+  --pink-border: #F3D7EA;
+  --text-dark: #1e1e2a;
+  --text-muted: #6b6f84;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --radius: 20px;
+}
+
+/* UTILITIES */
+.container {
+  width: min(1180px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 24px);
+}
+.section {
+  padding-block: clamp(20px, 8vw, 24px);
+}
+.section__title {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-dark);
+}
+
+/* ============================================
+   1) NAVBAR
+============================================ */
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--purple-main);
+  box-shadow: var(--shadow);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.navToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.navLinks {
+  display: flex;
+  gap: 32px;
+}
+
+.navLinks li a {
+  color: #fff;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.navLinks li a:hover { opacity: 0.7; }
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn--ghost {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.btn.btn--primary {
+  background: #f9d9ec;              
+  color: var(--purple-main);           
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn.btn--primary:hover {
+  background: #f7c6e4;              
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+.btn.btn--primary:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Logo di Navbar ==== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-img{
+  height: 32px;    
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .navLinks {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    flex-direction: column;
+    background: var(--purple-main);
+    width: 220px;
+    padding: 20px;
+    display: none;
+  }
+  .navLinks.is-open { display: flex; }
+  .navToggle { display: block; }
+}
+
+/* ============================================
+   2) HERO SECTION
+============================================ */
+.hero{
+  background: var(--purple-main);         
+  color:#fff;
+  border-bottom-left-radius: 24px;       
+  border-bottom-right-radius: 24px;
+  padding-block: 24px;                  
+  box-shadow: 0 -20px 40px rgba(0,0,0,0.12) inset;
+}
+
+.hero__inner{
+  display: flex;
+  justify-content: flex-start;           
+  align-items: flex-start;                
+  min-height: 0;                         
+}
+
+.hero__content{
+  max-width: 520px;
+  text-align: left;                       
+  padding-block: 12px 24px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px); 
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+  color: #fff;
+  white-space: nowrap; 
+}
+
+.brand-italic {
+  font-style: italic;
+  color: #ffff;             
+  letter-spacing: 0.5px;
+}
+
+.hero p {
+  font-size: clamp(16px, 2.2vw, 16px);
+  color: #EDE9FF;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  display: inline-block;           /* sejajar mengikuti panjang h1 */
+  max-width: none;                 /* jangan batasi panjang paragraf */
+  vertical-align: top;             /* sejajar posisi atas */
+}
+
+.btn--primary{
+  background: #f9d9ec;                   
+  color: var(--purple-main);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 60;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  font-size: 16px;
+}
+.btn--primary:hover{ filter: brightness(.98); }
+
+
+/* ============================================
+   3) VISUALISASI MENTAL
+============================================ */
+.vizGrid{
+  display:grid;
+  gap:24px;
+  grid-template-columns:1fr;
+}
+@media (min-width:768px){
+  .vizGrid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+.vizCard{
+  background: var(--pink-light);
+  border: 1px solid var(--pink-border);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.06);
+  padding: 14px;
+}
+
+.vizCard h3{
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.miniBars{
+  height: 140px;                
+  display: flex;
+  align-items: flex-end;         
+  gap: 12px;
+  padding: 6px 8px 10px;       
+}
+
+.bar{
+  position: relative;
+  flex: 1 1 0;
+  height: 100%;                 
+  background: #dfe1ff;           
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 0 rgba(0,0,0,0);
+}
+
+.fill{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: var(--h);             
+  border-radius: 10px 10px 0 0;
+  background: #4B3B8F;          
+}
+
+.theme-mood  .fill{ background:#3fa2ff; }   /* biru */
+.theme-stress.fill, .theme-stress .fill{ background:#ff3c10; } /* merah */
+.theme-sleep .fill{ background:#ffd20a; }   /* kuning */
+
+
+/* ============================================
+   4) REMINDER RELAKSASI
+============================================ */
+.reminderCard {
+  background: var(--pink-light);
+  border-radius: var(--radius);
+  padding: 16px;
+  border: 1px solid var(--pink-border);
+  box-shadow: var(--shadow);
+}
+
+.ctaBar {
+  display: block;
+  text-align: center;
+  background: var(--purple-main);
+  color: #fff;
+  border-radius: 999px;
+  padding: 12px 0;
+  font-weight: 700;
+}
+
+/* ============================================
+   5) KONSULTASI
+============================================ */
+.consultCard {
+  background: var(--pink-light);
+  border-radius: var(--radius);
+  border: 1px solid var(--pink-border);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+.consultCard__lead {
+  margin-top: 0;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.expertGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  margin-bottom: 16px;
+}
+.expert {
+  background: var(--purple-main);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 12px;
+  text-align: center;
+}
+.expert img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .expertGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============================================
+   6) ARTIKEL
+============================================ */
+.articleGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+.articleCard {
+  display: flex;
+  flex-direction: column;          /* Biar caption menempel di bawah */
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+  background: #eee;
+  height: 100%;                    /* Pastikan tinggi penuh dalam grid */
+  transition: transform 0.2s ease;
+}
+
+.articleCard:hover {
+  transform: translateY(-4px);     /* Efek hover ringan */
+}
+
+.articleCard__media {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.articleCard__caption {
+  background: var(--purple-main);
+  color: #fff;
+  padding: 16px;
+  flex-grow: 1;                    /* Biar caption menyesuaikan tinggi */
+  display: flex;
+  flex-direction: column;
+}
+
+.articleCard__caption h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.articleCard__caption p {
+  flex-grow: 1;                    /* Biar paragraf isi mengisi ruang tengah */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Grid Responsif */
+@media (min-width: 768px) {
+  .articleGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ============================================
+   7) FOOTER
+============================================ */
+.siteFooter {
+  background: var(--purple-dark);
+  color: #eae7ff;
+  padding-block: clamp(40px, 8vw, 72px);
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
+}
+.footerGrid {
+  display: grid;
+  gap: 32px;
+}
+.brand--footer {
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footerLinks li a {
+  color: #eae7ff;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+.footerLinks li a:hover {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .footerGrid {
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+  }
+}
+
+
+/* ===== Contact Page ===== */
+.contactHeader{
+  background: var(--purple-main);
+  color:#fff;
+  padding-block: clamp(28px, 8vw, 56px);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.contactHeader h1{
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4.8vw, 40px);
+  font-weight: 800;
+}
+.contactCard{
+  background: var(--pink-light);
+  border: 1px solid var(--pink-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(16px, 4vw, 28px);
+}
+.contactForm{
+  display: grid;
+  gap: 16px;
+}
+.formGrid{
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 768px){
+  .formGrid{ grid-template-columns: 1fr 1fr; }
+}
+.formGroup label{
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.formGroup input,
+.formGroup textarea{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid var(--pink-border);
+  outline: none;
+  font: inherit;
+  background: #fff;
+}
+.formGroup input:focus,
+.formGroup textarea:focus{
+  border-color: var(--purple-light);
+  box-shadow: 0 0 0 3px rgba(106,90,224,.12);
+}
+.formAgree{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   RESPONSIVE OFFSET
+============================================ */
+#beranda, #relaksasi, #konsultasi, #artikel {
+  scroll-margin-top: 90px;
+}
+

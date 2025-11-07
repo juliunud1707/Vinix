@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak Kami — MentalCare</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar (re-use gaya yang sama) -->
+  <header class="siteHeader">
+    <nav class="navbar container">
+      <div class="brand">
+        <img src="assets/logo.png" class="logo-img" alt="Logo MentalCare"/>
+        <span class="brand-italic">MentalCare</span>
+      </div>
+
+      <button class="navToggle" aria-label="Buka menu">☰</button>
+
+      <ul class="navLinks">
+        <li><a href="index.html#beranda">Beranda</a></li>
+        <li><a href="index.html#konsultasi">Konsultasi</a></li>
+        <li><a href="index.html#relaksasi">Relaksasi</a></li>
+        <li><a href="index.html#artikel">Artikel</a></li>
+      </ul>
+
+        <div class="navRight">
+        <a class="btn btn--primary" href="contact.html">Hubungi Kami</a>
+        </div>
+    </nav>
+  </header>
+
+  <!-- Header Halaman -->
+  <section class="contactHeader">
+    <div class="container">
+      <h1>Kontak Kami</h1>
+      <p>Butuh bantuan? Kirimkan pesanmu melalui formulir di bawah ini.</p>
+    </div>
+  </section>
+
+  <!-- Form Kontak -->
+  <section class="section">
+    <div class="container">
+      <div class="contactCard">
+        <!-- opsi paling basic: kirim via mail client user -->
+        <form class="contactForm"
+              action="mailto:mentalcare@appmail.com"
+              method="post" enctype="text/plain">
+          <div class="formGroup">
+            <label for="nama">Nama</label>
+            <input id="nama" name="Nama" type="text" required placeholder="Nama lengkap">
+          </div>
+
+          <div class="formGrid">
+            <div class="formGroup">
+              <label for="email">Email</label>
+              <input id="email" name="Email" type="email" required placeholder="email@domain.com">
+            </div>
+            <div class="formGroup">
+              <label for="telepon">Telepon</label>
+              <input id="telepon" name="Telepon" type="tel" placeholder="+62...">
+            </div>
+          </div>
+
+          <div class="formGroup">
+            <label for="subjek">Subjek</label>
+            <input id="subjek" name="Subjek" type="text" required placeholder="Topik pesan">
+          </div>
+
+          <div class="formGroup">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="Pesan" rows="6" required placeholder="Tulis pesanmu di sini..."></textarea>
+          </div>
+
+          <div class="formAgree">
+            <input id="setuju" type="checkbox" required>
+            <label for="setuju">Saya setuju data ini digunakan untuk menindaklanjuti pesan saya.</label>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="siteFooter">
+    <div class="container footerGrid">
+      <div>
+        <div class="brand brand--footer">
+          <img src="assets/logo.png" class="logo-img" alt="Logo"/>
+          <span class="brand-italic">MentalCare</span>
+        </div>
+        <p>Solusi kesehatan mental modern melalui konsultasi dengan Psikiater, Psikolog, dan Konselor.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul class="footerLinks">
+          <li><a href="index.html#beranda">Beranda</a></li>
+          <li><a href="index.html#konsultasi">Konsultasi</a></li>
+          <li><a href="index.html#relaksasi">Relaksasi</a></li>
+          <li><a href="index.html#artikel">Artikel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kontak</h5>
+        <ul class="footerLinks">
+          <li>Jl. Raya Kerobokan, Badung, BALI</li>
+          <li>mentalcare@appmail.com</li>
+          <li>+62 222 3344 5566</li>
+          <li>© 2025, All rights reserved</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.navToggle').addEventListener('click', () => {
+      document.querySelector('.navLinks').classList.toggle('is-open');
+    });
+  </script>
+</body>
+</html>
