@@ -13,7 +13,7 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 /* VARIABLES */
 :root {
-  --purple-dark: hsl(200, 100%, 32%);
+  --purple-dark: #03638d;
   --purple-main: #03638d;
   --purple-light: #5ab5e0;
   --pink-light: #FBE8F4;
