@@ -13,9 +13,9 @@ ul { list-style: none; padding: 0; margin: 0; }
 
 /* VARIABLES */
 :root {
-  --purple-dark: #3E2F86;
-  --purple-main: #4B3B8F;
-  --purple-light: #6A5AE0;
+  --purple-dark: hsl(200, 100%, 32%);
+  --purple-main: #03638d;
+  --purple-light: #5ab5e0;
   --pink-light: #FBE8F4;
   --pink-border: #F3D7EA;
   --text-dark: #1e1e2a;
